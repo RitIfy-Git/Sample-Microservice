@@ -1,4 +1,3 @@
-# Simple Flask Microservice
+# Simple Text-Based Microservice
 
-This is a minimal Flask microservice with a health endpoint.
-Includes GitHub Actions CI workflow.
+This is a minimal Python script used to demonstrate CI/CD using GitHub Actions. It requires no external packages or internet access.
