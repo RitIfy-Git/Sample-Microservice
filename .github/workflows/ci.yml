@@ -1,4 +1,4 @@
-name: CI for Flask Microservice
+name: CI Pipeline - No Dependencies
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  test:
+  run-microservice:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,8 +19,8 @@ jobs:
       with:
         python-version: '3.8'
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+    - name: Syntax check
+      run: python -m py_compile service.py
 
-    - name: Run syntax check
-      run: python -m py_compile app.py
+    - name: Run microservice
+      run: python service.py
